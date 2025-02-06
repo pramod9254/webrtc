@@ -1,18 +1,18 @@
 const { Server } = require("socket.io");
-const express = require('express');
-const app = express();
+// const express = require('express');
+// const app = express();
 
-const port =  8000;
-const server = app.listen(port, () => {
-  console.log(`Express server listening on port ${port}`);
-});
-const io = new Server(server, {
+// const port =  8000;
+// const server = app.listen(port, () => {
+//   console.log(`Express server listening on port ${port}`);
+// });
+const io = new Server(8000, {
   cors: true,
 });
 
-app.get('/', (req, res) => {
-  res.send('Hello Signaling Server', new Date());
-});
+// app.get('/', (req, res) => {
+//   res.send('Hello Signaling Server', new Date());
+// });
 
 const emailToSocketIdMap = new Map();
 const socketidToEmailMap = new Map();
